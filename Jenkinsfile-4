@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent DockerAgent1
     stages {
         stage('Test') {
             matrix {
