@@ -1,0 +1,26 @@
+pipeline {
+    agent none
+    stages {
+        stage('Test') {
+            matrix {
+                agent {
+                    docker { image "${DOCKER_IMAGE}" }
+                }
+                axes {
+                    axis {
+                        name 'DOCKER_IMAGE'
+                        values 'php:5.3', 'php:5.6'
+                    }
+                }
+                stages {
+                    stage('Test') {
+                        steps {
+                            sh 'php --version'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
