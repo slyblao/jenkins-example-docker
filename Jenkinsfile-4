@@ -4,8 +4,9 @@ pipeline {
         stage('Test') {
             matrix {
                 agent {
-                    docker { image "${DOCKER_IMAGE}" }
-                             args 'u root:root' }
+                    docker { image "${DOCKER_IMAGE}"
+                             args 'u root:root }
+                             }
                 axes {
                     axis {
                         name 'DOCKER_IMAGE'
