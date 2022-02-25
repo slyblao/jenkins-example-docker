@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+       label 'agent1'
+    }
+    stages {
+        stage('hello') {
+            steps {
+                sh 'java -version
+		echo "Get working director"
+		sh 'pwd''
+            }
+        }
+    }
+}
