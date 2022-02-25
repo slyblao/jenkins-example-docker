@@ -10,7 +10,7 @@ pipeline {
                 axes {
                     axis {
                         name 'DOCKER_IMAGE'
-                        values 'nginx/nginx'
+                        values 'nginx'
                     }
                 }
                 stages {
